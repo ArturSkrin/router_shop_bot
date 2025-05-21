@@ -26,7 +26,7 @@ def init_db():
     # Create routers table
     c.execute("""
         CREATE TABLE IF NOT EXISTS routers (
-            mac TEXT PRIMARY KEY,
+            mac TEXT PRIMARY KEY NOT NULL CHECK (mac <> ''),
             user_id BIGINT,
             router_name TEXT
         )
